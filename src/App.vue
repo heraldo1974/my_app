@@ -6,7 +6,7 @@
     <hr />
     <h1 v-if="enviado">Olá {{ name }}</h1>
   </form>
-</template>
+</template> asdasd
 
 <script>
 export default {
