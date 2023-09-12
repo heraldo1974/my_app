@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <form>
+    <h1><b>Nome</b></h1>
+    <input placeholder="Digite seu nome" v-model="name" />
+    <button type="button" @click="mudarEnviado">Enviar Mensagem</button>
+    <hr />
+    <h1 v-if="enviado">Olá {{ name }}</h1>
+  </form>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      name: null,
+      enviado: false,
+    };
+  },
+  methods: {
+    mudarEnviado() {
+      this.enviado = !this.enviado;
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
